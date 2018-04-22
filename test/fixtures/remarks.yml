@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: remarks
+#
+#  id         :integer          not null, primary key
+#  remark     :text
+#  date       :date
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  remark: MyText
+  date: 2018-04-22
+
+two:
+  remark: MyText
+  date: 2018-04-22

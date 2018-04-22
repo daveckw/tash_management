@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @remark.remark %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @remark.date %>
+</p>
+
+<%= link_to 'Edit', edit_remark_path(@remark) %> |
+<%= link_to 'Back', remarks_path %>
