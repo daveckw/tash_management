@@ -28,6 +28,7 @@ class ProjectTasksController < ApplicationController
 
     respond_to do |format|
       if @project_task.save
+        flash[:success] = "Project Task Created"
         format.html { redirect_to @project_task, notice: 'Project task was successfully created.' }
         format.json { render :show, status: :created, location: @project_task }
       else
