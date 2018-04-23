@@ -29,7 +29,7 @@ class ProjectTasksController < ApplicationController
     respond_to do |format|
       if @project_task.save
         flash[:success] = "Project Task Created"
-        format.html { redirect_to @project_task, notice: 'Project task was successfully created.' }
+        format.html { redirect_to @project_task }
         format.json { render :show, status: :created, location: @project_task }
       else
         format.html { render :new }
@@ -43,7 +43,8 @@ class ProjectTasksController < ApplicationController
   def update
     respond_to do |format|
       if @project_task.update(project_task_params)
-        format.html { redirect_to @project_task, notice: 'Project task was successfully updated.' }
+        flash[:success] = "Project Task updated!"
+        format.html { redirect_to @project_task }
         format.json { render :show, status: :ok, location: @project_task }
       else
         format.html { render :edit }
@@ -57,7 +58,8 @@ class ProjectTasksController < ApplicationController
   def destroy
     @project_task.destroy
     respond_to do |format|
-      format.html { redirect_to project_tasks_url, notice: 'Project task was successfully destroyed.' }
+      flash[:success] = "Project Task deleted!"
+      format.html { redirect_to project_tasks_url }
       format.json { head :no_content }
     end
   end
